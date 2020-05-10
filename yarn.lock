@@ -1611,6 +1611,11 @@ core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
+core-js@^2.4.1:
+  version "2.6.11"
+  resolved "http://bnpm.byted.org/core-js/download/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
+  integrity sha1-OIMUafmSK97Y7iHJ3EaYXgOZMIw=
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -2026,20 +2031,6 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
-draft-js-checkable-list-item@^3.0.1:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/draft-js-checkable-list-item/-/draft-js-checkable-list-item-3.0.3.tgz#3c4aaaf1ad6281a49e45e8085fdbe912d43f2aca"
-  dependencies:
-    draft-js-modifiers "~0.2.2"
-    immutable "~3.7.4"
-
-draft-js-modifiers@~0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/draft-js-modifiers/-/draft-js-modifiers-0.2.2.tgz#ff715450a04aea86b84993b0e51eea7c25a2591d"
-  dependencies:
-    draft-js "~0.10.5"
-    immutable "~3.7.4"
-
 draft-js-plugins-editor@2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/draft-js-plugins-editor/-/draft-js-plugins-editor-2.0.4.tgz#ab7178de886d6d11f9f43a448c844da6266053e0"
@@ -2057,13 +2048,14 @@ draft-js-prism@^1.0.5:
     extend "^3.0.0"
     immutable "*"
 
-draft-js@~0.10.5:
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/draft-js/-/draft-js-0.10.5.tgz#bfa9beb018fe0533dbb08d6675c371a6b08fa742"
+draft-js@~0.11.0:
+  version "0.11.5"
+  resolved "http://bnpm.byted.org/draft-js/download/draft-js-0.11.5.tgz#b5dd30c30c9316801ab9766d45a8f88b1cd43b2c"
+  integrity sha1-td0wwwyTFoAauXZtRaj4ixzUOyw=
   dependencies:
-    fbjs "^0.8.15"
+    fbjs "^1.0.0"
     immutable "~3.7.4"
-    object-assign "^4.1.0"
+    object-assign "^4.1.1"
 
 duplexer3@^0.1.4:
   version "0.1.4"
@@ -2596,11 +2588,30 @@ fastparse@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/fastparse/-/fastparse-1.1.1.tgz#d1e2643b38a94d7583b479060e6c4affc94071f8"
 
-fbjs@^0.8.15, fbjs@^0.8.16, fbjs@^0.8.4:
+fbjs-css-vars@^1.0.0:
+  version "1.0.2"
+  resolved "http://bnpm.byted.org/fbjs-css-vars/download/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
+  integrity sha1-IWVRE2rgL+JVkyw+yHdfGOLAeLg=
+
+fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   dependencies:
     core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.18"
+
+fbjs@^1.0.0:
+  version "1.0.0"
+  resolved "http://bnpm.byted.org/fbjs/download/fbjs-1.0.0.tgz#52c215e0883a3c86af2a7a776ed51525ae8e0a5a"
+  integrity sha1-UsIV4Ig6PIavKnp3btUVJa6OClo=
+  dependencies:
+    core-js "^2.4.1"
+    fbjs-css-vars "^1.0.0"
     isomorphic-fetch "^2.1.1"
     loose-envify "^1.0.0"
     object-assign "^4.1.0"
