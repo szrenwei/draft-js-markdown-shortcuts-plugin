@@ -1,10 +1,10 @@
 import changeCurrentInlineStyle from './changeCurrentInlineStyle';
 
 const inlineMatchers = {
-  BOLD: /(?:^|\s|\n|[^_*~`])(\*{2}|_{2})((?!\1).*?)(\1)($|\s|\n|[^_*~`])/g,
-  ITALIC: /(?:^|\s|\n|[^_*~`])(\*{1}|_{1})((?!\1).*?)(\1)($|\s|\n|[^_*~`])/g,
-  CODE: /(?:^|\s|\n|[^_*~`])(`)((?!\1).*?)(\1)($|\s|\n|[^_*~`])/g,
-  STRIKETHROUGH: /(?:^|\s|\n|[^_*~`])(~{2})((?!\1).*?)(\1)($|\s|\n|[^_*~`])/g
+  BOLD: /(?:^|\s|\n|[^_*~`])(\*{2}|_{2})((?!\1).*?)(\1)(\s)/g,
+  ITALIC: /(?:^|\s|\n|[^_*~`])(\*{1}|_{1})((?!\1).*?)(\1)(\s)/g,
+  // CODE: /(?:^|\s|\n|[^_*~`])(`)((?!\1).*?)(\1)(\s)/g,
+  STRIKETHROUGH: /(?:^|\s|\n|[^_*~`])(~{2})((?!\1).*?)(\1)(\s)/g
 };
 
 const handleInlineStyle = (editorState, character) => {
