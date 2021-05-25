@@ -1,26 +1,15 @@
-import { EditorState } from 'draft-js';
+import { EditorState, Modifier, RichUtils, } from 'draft-js';
 
-const changeCurrentBlockType = (editorState, type, text, blockMetadata = {}) => {
+const changeCurrentBlockType = (editorState, type) => {
   const currentContent = editorState.getCurrentContent();
   const selection = editorState.getSelection();
-  const key = selection.getStartKey();
-  const blockMap = currentContent.getBlockMap();
-  const block = blockMap.get(key);
-  const data = block.getData().merge(blockMetadata);
-  const newBlock = block.merge({ type, data, text: text || '' });
   const newSelection = selection.merge({
     anchorOffset: 0,
-    focusOffset: 0,
+    focusOffset: selection.focusOffset,
   });
-  const newContentState = currentContent.merge({
-    blockMap: blockMap.set(key, newBlock),
-    selectionAfter: newSelection,
-  });
-  return EditorState.push(
-    editorState,
-    newContentState,
-    'change-block-type'
-  );
+  const newContentState = Modifier.removeRange(currentContent, newSelection, 'backward');
+  const newEditorState = EditorState.push(editorState, newContentState, 'backspace-character');
+  return RichUtils.toggleBlockType(newEditorState, type);
 };
 
 export default changeCurrentBlockType;
